@@ -68,7 +68,7 @@
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
                     <Label VerticalAlignment="Center">Output Folder</Label>
                     <TextBox Name="SelectExportFolderTextBox" MinWidth="200" Watermark="~/.local/share/applications" />
-                    <Button Name="SelectExportFolderButton" Click="SelectExportFolderButton_OnClick">Select Output Folder</Button>
+                    <Button Name="SelectExportFolderButton" Click="SelectExportFolderButton_OnClick">Select Folder</Button>
                 </StackPanel>
 
                 <Separator Margin="4" />
