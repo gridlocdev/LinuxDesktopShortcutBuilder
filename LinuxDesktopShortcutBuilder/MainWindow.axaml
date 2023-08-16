@@ -1,0 +1,79 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="LinuxDesktopShortcutBuilder.MainWindow"
+        x:CompileBindings="True"
+        Resized="WindowBase_OnResized"
+        Title="Linux Desktop Shortcut Builder">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="16">
+        <!-- Results Panel -->
+        <StackPanel Name="RootStackPanel" Orientation="Horizontal" Spacing="16">
+            <StackPanel Orientation="Vertical" Spacing="16">
+                <Border BorderBrush="Blue"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Padding="8">
+                    <TextBlock Name="FileOutputTextBlock" MinWidth="200" LineHeight="16" TextWrapping="Wrap" />
+                </Border>
+
+                <Button Name="SaveButton" Click="SaveButton_OnClick">Save</Button>
+                <!-- Success / Error Labels -->
+                <StackPanel Orientation="Vertical" Name="ErrorListStackPanel" IsVisible="False" Margin="16 0" />
+                <TextBlock Name="SaveSuccessTextBlock"
+                           IsVisible="False"
+                           Foreground="Green"
+                           TextWrapping="Wrap"
+                           Text="Application shortcut has saved successfully. Please log out and log back in for it to appear in system menus!" />
+            </StackPanel>
+
+            <Rectangle VerticalAlignment="Stretch" Fill="Blue" Width="1" Margin="16 0" />
+            <!-- Form Input Panel -->
+            <StackPanel Name="FormInputPanel" Orientation="Vertical" Spacing="16">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                    <Label VerticalAlignment="Center">Name</Label>
+                    <TextBox Name="NameTextBox" MinWidth="200" TextChanged="NameTextBox_OnTextChanged" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                    <Label VerticalAlignment="Center">Executable Path</Label>
+                    <TextBox Name="ExecutableFilePathTextBox" MinWidth="200"
+                             TextChanged="ExecutableFilePathTextBox_OnTextChanged" />
+                    <Button Name="SelectExecutableButton" Click="SelectExecutableFilePathButton_OnClick">Select File</Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                    <Label VerticalAlignment="Center">Icon Path</Label>
+                    <TextBox Name="IconFilePathTextBox" MinWidth="200" TextChanged="IconFilePathTextBox_OnTextChanged" />
+                    <Button Name="SelectIconButton" Click="SelectIconButton_OnClick">Select File</Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                    <Label VerticalAlignment="Center">Encoding</Label>
+                    <TextBox Name="EncodingTextBox" MinWidth="200" TextChanged="EncodingTextBox_OnTextChanged" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                    <Label VerticalAlignment="Center">Version</Label>
+                    <TextBox Name="VersionTextBox" MinWidth="200" TextChanged="VersionTextBox_OnTextChanged" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                    <Label VerticalAlignment="Center">Type</Label>
+                    <TextBox Name="TypeTextBox" MinWidth="200" TextChanged="TypeTextBox_OnTextChanged" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                    <Label VerticalAlignment="Center">Opens Terminal</Label>
+                    <CheckBox Name="OpensTerminalCheckBox" IsCheckedChanged="OpensTerminalCheckBox_OnIsCheckedChanged" />
+                </StackPanel>
+
+                <Separator Margin="4" />
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                    <Label VerticalAlignment="Center">Output Folder</Label>
+                    <TextBox Name="SelectExportFolderTextBox" MinWidth="200" Watermark="~/.local/share/applications" />
+                    <Button Name="SelectExportFolderButton" Click="SelectExportFolderButton_OnClick">Select Output Folder</Button>
+                </StackPanel>
+
+                <Separator Margin="4" />
+
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
