@@ -35,7 +35,7 @@ I wanted to simplify my own workflow for creating `.desktop` applications for ap
 ## Roadmap
 
 - [x] Build a basic functional version of the application
-- [ ] Remove deprecated fields (it looks like "Encoding" and "Terminal" have some things to fix using `desktop-file-validate`
+- [x] Remove deprecated fields (it looks like "Encoding" and "Terminal" have some things to fix using `desktop-file-validate`
 - [ ] Add some additional fields (such as "Category")
 - [ ] Add ComboBox controls to provide helpful suggestions for frequently used values
 - [ ] Make it look prettier
