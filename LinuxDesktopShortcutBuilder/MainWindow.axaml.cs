@@ -50,7 +50,7 @@ public partial class MainWindow : Window
              [Desktop Entry]
              Version={Properties.Version}
              Type={Properties.Type}
-             Terminal={Properties.OpensTerminal}
+             Terminal={Properties.OpensTerminal.ToString().ToLower()}
              Name={Properties.Name}
              Exec={Properties.ExecutableFilePath}
              {(string.IsNullOrEmpty(Properties.IconFilePath) ? "" : $"Icon={Properties.IconFilePath}")}
