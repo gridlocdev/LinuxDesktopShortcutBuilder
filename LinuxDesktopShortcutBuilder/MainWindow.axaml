@@ -47,10 +47,6 @@
                     <Button Name="SelectIconButton" Click="SelectIconButton_OnClick">Select File</Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
-                    <Label VerticalAlignment="Center">Encoding</Label>
-                    <TextBox Name="EncodingTextBox" MinWidth="200" TextChanged="EncodingTextBox_OnTextChanged" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
                     <Label VerticalAlignment="Center">Version</Label>
                     <TextBox Name="VersionTextBox" MinWidth="200" TextChanged="VersionTextBox_OnTextChanged" />
                 </StackPanel>

@@ -13,7 +13,6 @@ public partial class MainWindow : Window
 {
     public class ShortcutProperties
     {
-        public string Encoding { get; set; } = "UTF-8";
         public string Version { get; set; } = "1.0";
         public string Type { get; set; } = "Application";
         public bool OpensTerminal { get; set; }
@@ -39,7 +38,6 @@ public partial class MainWindow : Window
         NameTextBox.Text = Properties.Name;
         ExecutableFilePathTextBox.Text = Properties.ExecutableFilePath;
         IconFilePathTextBox.Text = Properties.IconFilePath;
-        EncodingTextBox.Text = Properties.Encoding;
         VersionTextBox.Text = Properties.Version;
         TypeTextBox.Text = Properties.Type;
         OpensTerminalCheckBox.IsChecked = Properties.OpensTerminal;
@@ -50,7 +48,6 @@ public partial class MainWindow : Window
         => FileOutputTextBlock.Text =
             $"""
              [Desktop Entry]
-             Encoding={Properties.Encoding}
              Version={Properties.Version}
              Type={Properties.Type}
              Terminal={Properties.OpensTerminal}
@@ -147,13 +144,6 @@ public partial class MainWindow : Window
     {
         if (sender is TextBox textBox)
             Properties.IconFilePath = textBox.Text;
-        RenderFileOutputTextBlock();
-    }
-
-    private void EncodingTextBox_OnTextChanged(object? sender, TextChangedEventArgs e)
-    {
-        if (sender is TextBox textBox)
-            Properties.Encoding = textBox.Text ?? "";
         RenderFileOutputTextBlock();
     }
 
